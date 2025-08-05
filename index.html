@@ -51,12 +51,17 @@
             font-size: 2.8rem;
             margin-bottom: 10px;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            /* Исправление для мобильных устройств */
+            padding: 0 15px;
+            word-wrap: break-word;
+            line-height: 1.2;
         }
         
         .tagline {
             font-size: 1.2rem;
             margin-bottom: 30px;
             color: #ddd;
+            padding: 0 10px;
         }
         
         .description {
@@ -96,6 +101,14 @@
         .contact-card i {
             font-size: 2.5rem;
             margin-bottom: 15px;
+            display: block;
+        }
+        
+        /* Стиль для иконки Avito */
+        .avito-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 15px;
             display: block;
         }
         
@@ -159,6 +172,28 @@
             
             h1 {
                 font-size: 2.2rem;
+                padding: 0 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+                line-height: 1.3;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+            
+            .description {
+                padding: 20px 15px;
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 12px 20px;
+                font-size: 1rem;
             }
         }
     </style>
@@ -178,7 +213,10 @@
         
         <div class="contacts">
             <div class="contact-card">
-                <i class="fab fa-avito"></i>
+                <!-- Иконка Avito в формате SVG -->
+                <svg class="avito-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#FFFFFF" d="M12.103 0C18.666 0 24 5.485 24 11.997c0 6.51-5.33 11.99-11.9 11.99L0 24V11.79C0 5.28 5.532 0 12.103 0zm.116 4.563c-2.593-.003-4.996 1.352-6.337 3.57-1.33 2.208-1.387 4.957-.148 7.22L4.4 19.61l4.794-1.074c2.745 1.685 6.572.676 8.79-2.27 2.207-2.958 2.207-7.04 0-9.998-1.25-1.73-3.13-2.71-5.065-2.71z"/>
+                </svg>
                 <h3>Наш Авито</h3>
                 <p>Товары и услуги</p>
                 <a href="https://www.avito.ru/" class="btn avito" target="_blank">
