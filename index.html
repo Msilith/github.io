@@ -51,12 +51,12 @@
             font-size: 2.8rem;
             margin-bottom: 10px;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-            /* Предотвращаем перенос слов */
-            white-space: nowrap;
-            /* Гарантируем, что текст останется внутри контейнера */
-            overflow: hidden;
-            text-overflow: ellipsis;
             padding: 0 15px;
+            /* Разрешаем перенос слов только при необходимости */
+            word-break: keep-all;
+            /* Гарантируем, что текст не будет обрезан */
+            overflow: visible;
+            white-space: normal;
         }
         
         .tagline {
@@ -163,36 +163,49 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
+        @media (max-width: 900px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
         @media (max-width: 768px) {
             .container {
                 padding: 30px 20px;
             }
             
             .contact-card {
-                min-width: 100%;
+                min-width: calc(50% - 20px);
             }
             
             h1 {
-                font-size: 2.4rem;
-                white-space: normal; /* Разрешаем перенос на средних экранах */
-                line-height: 1.3;
+                font-size: 2.2rem;
             }
         }
         
         @media (max-width: 600px) {
             h1 {
-                font-size: 2.1rem;
+                font-size: 2.0rem;
             }
         }
         
-        @media (max-width: 480px) {
+        @media (max-width: 500px) {
             h1 {
-                font-size: 1.9rem;
-                line-height: 1.3;
+                font-size: 1.8rem;
+            }
+            
+            .contact-card {
+                min-width: 100%;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.6rem;
             }
             
             .tagline {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
             
             .description {
@@ -203,12 +216,6 @@
             .btn {
                 padding: 12px 20px;
                 font-size: 1rem;
-            }
-        }
-        
-        @media (max-width: 400px) {
-            h1 {
-                font-size: 1.7rem;
             }
         }
         
@@ -258,7 +265,7 @@
                 <i class="fab fa-whatsapp"></i>
                 <h3>WhatsApp</h3>
                 <p>Чат и звонки</p>
-                <a href="https://wa.me/" class="btn whatsapp" target="_blank">
+                <a href="https://wa.me/+79859945541" class="btn whatsapp" target="_blank">
                     <i class="fab fa-whatsapp"></i>Сообщение
                 </a>
             </div>
@@ -280,3 +287,5 @@
     </div>
 </body>
 </html>
+            
+
