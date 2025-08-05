@@ -13,6 +13,10 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
+        html, body {
+            height: 100%;
+        }
+        
         body {
             background: linear-gradient(135deg, #e9ecef, #dee2e6, #ced4da);
             color: #343a40;
@@ -20,14 +24,15 @@
             padding: 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Изменено для скроллинга */
             position: relative;
-            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: auto; /* Разрешаем вертикальный скроллинг */
         }
         
         /* Тематические элементы фона */
         .truck-bg {
-            position: absolute;
+            position: fixed; /* Фиксируем фон */
             opacity: 0.03;
             z-index: -1;
         }
@@ -58,6 +63,7 @@
             border: 1px solid rgba(0, 0, 0, 0.1);
             position: relative;
             overflow: hidden;
+            margin: 40px 0; /* Отступы сверху и снизу */
         }
         
         /* Декоративные элементы */
@@ -265,6 +271,7 @@
         @media (max-width: 768px) {
             .container {
                 padding: 30px 20px;
+                margin: 20px 0; /* Уменьшаем отступы на мобильных */
             }
             
             .contact-card {
@@ -285,6 +292,11 @@
         }
         
         @media (max-width: 600px) {
+            body {
+                padding: 10px; /* Уменьшаем отступы body */
+                align-items: flex-start; /* Выравнивание по верху */
+            }
+            
             h1 {
                 font-size: 2.0rem;
             }
